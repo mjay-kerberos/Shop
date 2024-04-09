@@ -1,0 +1,55 @@
+/* ProductItem.css */
+
+.product-item {
+  border: 1px solid #ccc; /* Optional border */
+  border-radius: 4px; /* Rounded corners */
+  overflow: hidden; /* Ensures nothing spills outside the border */
+  position: relative;
+  background-color: #cdc4bf; /* Sandy background color */
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden; /* This ensures that the description doesn't show until hover */
+}
+
+.product-image img {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area nicely */
+  transition: transform 0.3s ease; /* Smooth scaling effect for the image */
+}
+
+.product-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; /* Ensuring it spans the full width */
+  bottom: 0; /* Ensuring it spans the full height */
+  background: rgba(0, 0, 0, 0.5); /* Dark background for the text on hover */
+  color: #cdc4bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none; /* Prevent mouse events on the description */
+  padding: 20px; /* Padding inside the description area */
+  font-size: 1.25rem; /* Larger font size */
+  text-align: center; /* Ensure text is centered */
+  box-sizing: border-box; /* Ensures padding is included in width/height */
+}
+
+.product-image:hover .product-description {
+  opacity: 1;
+  pointer-events: all; /* Re-enable mouse events when hovered */
+}
+
+.product-image:hover .product-description {
+  opacity: 1;
+}
+
+.product-image:hover img {
+  transform: scale(1.05); /* Slightly enlarge the image */
+}
+

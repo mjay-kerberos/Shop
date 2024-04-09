@@ -1,0 +1,61 @@
+/* ProductsPage.css */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr)); /* This creates a responsive grid */
+  gap: 10px; /* Space between items */
+  padding: 10px;
+  justify-content: center;
+  max-width: None;
+  box-sizing: 0;
+}
+
+.products-container div {
+  box-shadow: none !important;
+}
+  
+/* Adjustments for responsiveness */
+@media (min-width: 1024px) {
+    /* For larger screens, if there are 5 items, the second row will have fewer items, so we force it to center */
+  .products-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      /* Calculate the correct width for two items centered in a larger space */
+      /* (total space minus (item width times number of items)) divided by number of gaps */
+    grid-template-columns: repeat(3, 1fr);
+}
+  .products-container::after {
+    content: '';
+    width: 300px; /* The width of your items */
+    margin: 0 auto; /* This will force the single item to be centered */
+  }
+}
+  
+@media (max-width: 1023px) and (min-width: 769px) {
+  .products-container {
+    /* Adjust the minmax for this breakpoint if necessary */
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .products-container {
+    grid-template-columns: 1fr; /* Single column layout on very small screens */
+  }
+}
+
+.text{
+  font-family: 'SfDistantGalaxyAlternate', sans-serif;
+  color: #cdc4bf;
+  font-size: 4em
+}
+
+.symbol{
+  font-family:'SfDistantGalaxySymbols', sans-serif;
+  color: #cdc4bf;
+  font-size: 1.5em
+}

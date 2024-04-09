@@ -1,0 +1,90 @@
+@import '../fonts.css';
+*{
+  box-shadow: unset;
+}
+#root{
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.App div{
+  max-width: auto;
+  margin: 0;
+  padding: 10px;
+  box-shadow: none;
+}
+
+.body {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+#coursology-root {
+  max-width: none;
+  margin: 0;
+  padding: 0;    
+  box-shadow: none;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative; /* Needed to position the header absolutely */
+  max-width: none; /* This will override the 400px max-width */
+  margin: 0 auto; /* This will keep it centered but remove the 40px margin */
+  padding: 0; /* This will remove the 20px padding */
+}
+
+.main-content {
+  flex: 1; /* Takes up the rest of the space in the flex container */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  background-color: #314672; 
+  background-image: url('../../public/images/galaxy.jpg');
+  color: #314672;
+  font-family: 'SfDistantGalaxyAlternate', sans-serif; /* Default font */
+  background-size: cover;
+  background-position: center
+}
+
+.navbar, .menu-item {
+  font-family: 'DroidobeshDepot', sans-serif;
+}
+
+.title {
+  font-family: 'SfDistantGalaxyOutline', sans-serif;
+}
+
+.title-symbols {
+  font-family: 'SfDistantGalaxySymbols', sans-serif;
+}
+
+.product-title {
+  font-family: 'SfDistantGalaxyAlternate', sans-serif;
+}
+
+.product-symbols {
+  font-family: 'SfDistantGalaxySymbols', sans-serif;
+  font-size: smaller;
+}
+
+.teal-job-tracker-root-stable div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 !important;
+}
+
+.teal-job-tracker-root-stable div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0;
+}

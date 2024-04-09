@@ -1,0 +1,77 @@
+/* LoginPage.css */
+/* This container centers everything vertically and horizontally */
+.login-container {
+    display: flex; /* Use flexbox */
+    top: 30%;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full height of the viewport */
+  }
+  
+  .login-box {
+    max-width: 500px;
+    width: 100%; /* Full width of its container */
+    max-width: 500px; /* Maximum width of the login box */
+    padding: 30px; /* Spacing inside the box */
+    margin: auto; /* Additional margin for auto will center the box */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+    background: #3b75b05e; /* Optional: background color */
+  }
+  
+  /* This will make the error message text centered */
+  .login-error {
+    text-align: center;
+    color: red; /* Just an example to make it stand out */
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Larger font size for the heading */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    font-size: 1rem; /* Larger font size for inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem; /* Space below each input before the next element */
+  }
+
+  label {
+    display: block; /* This will make the label take up the full width */
+    margin-bottom: 0.8rem; /* Increase the bottom margin for more space */
+    font-family: 'SfDistantGalaxyOutline', sans-serif;
+    font-size: 1.5rem; /* Slightly larger font size for labels if needed */
+    color: #dddfe4; /* Darker text color for better readability */
+  }
+
+  button {
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Larger font size for the button */
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    color: #ffffff; /* Text color change on hover for better contrast */
+  }
+
+  label, input[type="text"], input[type="password"],button {
+    width: 300px; 
+    margin-bottom: 1rem; /* Spacing below each field */
+    display: grid;
+}
+  
+
+  

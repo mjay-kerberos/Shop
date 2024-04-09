@@ -1,0 +1,29 @@
+/* fonts.css */
+@font-face {
+    font-family: 'SfDistantGalaxyAlternate';
+    src: url('./public/fonts/SfDistantGalaxyAlternate-OE4d.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SfDistantGalaxyOutline';
+    src: url('./public/fonts/SfDistantGalaxyOutline-xoeO.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'DroidobeshDepot';
+    src: url('./public/fonts/DroidobeshDepot-gxmVE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SfDistantGalaxySymbols';
+    src: url('./public/fonts/SfDistantGalaxySymbols-aylE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

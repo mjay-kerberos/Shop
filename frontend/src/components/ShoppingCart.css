@@ -1,0 +1,46 @@
+/* ShoppingCart.css */
+.shopping-cart {
+    position: fixed;
+    top: 50px; /* Adjust as needed */
+    right: 0;
+    width: 300px; /* Adjust as needed */
+    background-color: #c5baba;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Make sure it's above other content */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .add-to-cart-btn {
+    margin: 0 auto; /* Center button */
+    display: block; /* Make the button a block element to apply margin auto */
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+  }
+
+  .x {
+    font-size: 1rem; 
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    background: none;
+    color: red; 
+    width: auto;
+  }
+
+  .items {
+    font-family: 'Franklin Gothic Medium'
+  }
+  
+  

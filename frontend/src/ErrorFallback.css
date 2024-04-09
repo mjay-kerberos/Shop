@@ -1,0 +1,17 @@
+/* ErrorFallback.css */
+.error-fallback {
+    color: red; /* Make text color red */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add some padding */
+  }
+  
+  .error-fallback h1 {
+    font-family: 'SfDistantGalaxyAlternate', sans-serif; /* First font */
+    font-size: 4em;
+  }
+  
+  .error-fallback p {
+    font-family: 'SfDistantGalaxySymbols', serif; /* Second font */
+    font-size: 2em;
+  }
+  

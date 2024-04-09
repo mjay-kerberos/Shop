@@ -1,0 +1,43 @@
+/* HomePage.css */
+.homepage-background {
+    height: 100vh; /* Full height of the viewport */
+    background-color: #314672; /* Sandy beige background color */
+    background-image: url('../../public/images/market.jpg'); /* Corrected path for background image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    position: relative; /* Needed for absolute positioning of child elements */
+    max-width: none;
+    margin: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 40%; /* Adjusted for better spacing */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'SfDistantGalaxyAlternate', sans-serif;
+    color: #e9e2e0;
+    text-align: center;
+    font-size: 5em; /* Larger font size for main text */
+    padding: 20px;
+    background-color: rgba(89, 88, 158, 0.7);
+    border-radius: 10px;
+    max-width: none;
+    margin: 0;
+}
+
+.symbol-overlay {
+    position: absolute;
+    top: 55%; /* Adjusted to be below the text-overlay */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'DroidobeshDepot', sans-serif;
+    color: #e9e2e0;
+    text-align: center;
+    font-size: 1.5em; /* Adjusted for smaller symbol text size */
+    padding: 10px; /* Adjust padding if needed */
+    background-color: rgba(89, 88, 158, 0.7); /* Slightly more transparency */
+    border-radius: 10px;
+}

@@ -1,0 +1,34 @@
+/* This targets the element with the id of 'root' */
+#root {
+  max-width: none; /* This ensures that the width is not restricted */
+  margin: 0; /* This removes the margin around the 'root' div */
+  padding: 0; /* This removes the padding inside the 'root' div */
+  box-shadow: none; /* This removes the box shadow if any */
+}
+
+/* This targets the element with the id of 'root' */
+.div.root {
+  max-width: none; /* This ensures that the width is not restricted */
+  margin: 0; /* This removes the margin around the 'root' div */
+  padding: 0; /* This removes the padding inside the 'root' div */
+  box-shadow: none; /* This removes the box shadow if any */
+}
+
+
+
+body {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
