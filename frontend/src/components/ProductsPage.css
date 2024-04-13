@@ -20,7 +20,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       /* Calculate the correct width for two items centered in a larger space */
       /* (total space minus (item width times number of items)) divided by number of gaps */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
   .products-container::after {
     content: '';
