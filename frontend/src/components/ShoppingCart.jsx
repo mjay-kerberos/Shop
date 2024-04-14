@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { UserContext } from './App';  // Import the context created in App.jsx
+import { UserContext } from '../App';  // Ensure correct path
 import './ShoppingCart.css';
 
 const ShoppingCart = ({ cartItems, setCartItems, onClose }) => {
-  const { user, updateUserCredit } = useContext(UserContext);  // Use context to access user and updateUserCredit
+  const { user, updateUserCredit } = useContext(UserContext);
 
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -36,9 +36,8 @@ const ShoppingCart = ({ cartItems, setCartItems, onClose }) => {
 
       const data = await response.json();
       updateUserCredit(data.updatedCredit);  // Update credit using context
-
-      setCartItems([]);  // Clear the cart
-      onClose();  // Close the cart modal
+      setCartItems([]);  // Clear the cart after checkout
+      onClose();  // Close the cart modal (assumes onClose toggles visibility)
       alert('Checkout successful! Remaining credit: ' + data.updatedCredit);
     } catch (error) {
       console.error('Checkout error:', error);
@@ -47,19 +46,21 @@ const ShoppingCart = ({ cartItems, setCartItems, onClose }) => {
   };
 
   return (
-    <div className="shopping-cart">
-      <button onClick={onClose}>Close</button>
-      <h2>Your Cart</h2>
-      <ul className='items'>
-        {cartItems.map((item) => (
-          <li key={item.id}>
-            {item.name} - ${item.price} x {item.quantity}
-            <button className='remove-item-btn' onClick={() => handleRemoveItem(item.id)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <p>Total: ${getTotalPrice()}</p>
-      <button onClick={handleCheckout}>Checkout</button>
+    <div className="shopping-cart-overlay">
+      <div className="shopping-cart">
+        <button onClick={onClose}>Close</button>
+        <h2>Your Cart</h2>
+        <ul className='items'>
+          {cartItems.map((item) => (
+            <li key={item.id}>
+              {item.name} - ${item.price} x {item.quantity}
+              <button className='x' onClick={() => handleRemoveItem(item.id)}>X</button>
+            </li>
+          ))}
+        </ul>
+        <p>Total: ${getTotalPrice()}</p>
+        <button onClick={handleCheckout}>Checkout</button>
+      </div>
     </div>
   );
 };

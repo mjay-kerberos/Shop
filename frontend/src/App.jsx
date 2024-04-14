@@ -48,7 +48,7 @@ function App() {
 
   return (
     <UserContext.Provider value={{ user, setUser, updateUserCredit }}>
-      <Router>
+
         <div className="App">
           <Header onCartClick={toggleCartVisibility} />
           {cartVisible && (
@@ -69,7 +69,6 @@ function App() {
             </Routes>
           </div>
         </div>
-      </Router>
     </UserContext.Provider>
   );
 }
