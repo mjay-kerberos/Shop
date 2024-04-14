@@ -1,7 +1,10 @@
-import React from 'react';
-import './ShoppingCart.css'
+import React, { useContext } from 'react';
+import { UserContext } from './App';  // Import the context created in App.jsx
+import './ShoppingCart.css';
 
-const ShoppingCart = ({ cartItems, onClose, onCheckout, user, onUserCreditUpdate, setCartItems }) => {
+const ShoppingCart = ({ cartItems, setCartItems, onClose }) => {
+  const { user, updateUserCredit } = useContext(UserContext);  // Use context to access user and updateUserCredit
+
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
@@ -11,9 +14,9 @@ const ShoppingCart = ({ cartItems, onClose, onCheckout, user, onUserCreditUpdate
   };
 
   const handleCheckout = async () => {
-    // Ensure user is not undefined and has username
     if (!user || !user.username) {
-      console.error('User information is missing');
+      console.error('Checkout failed: User information is missing.');
+      alert('Error: User information is missing.');
       return;
     }
 
@@ -28,17 +31,18 @@ const ShoppingCart = ({ cartItems, onClose, onCheckout, user, onUserCreditUpdate
       });
 
       if (!response.ok) {
-        throw new Error('Checkout failed');
+        throw new Error('Checkout failed with HTTP status ' + response.status);
       }
 
       const data = await response.json();
-      // Call the onUserCreditUpdate function with the new credit amount.
-      onUserCreditUpdate(data.updatedCredit);
+      updateUserCredit(data.updatedCredit);  // Update credit using context
 
-      onClose(); // Close the cart upon successful checkout.
-      alert('Checkout successful, remaining credit: ' + data.updatedCredit);
+      setCartItems([]);  // Clear the cart
+      onClose();  // Close the cart modal
+      alert('Checkout successful! Remaining credit: ' + data.updatedCredit);
     } catch (error) {
       console.error('Checkout error:', error);
+      alert('Checkout failed: ' + error.message);
     }
   };
 
@@ -49,7 +53,8 @@ const ShoppingCart = ({ cartItems, onClose, onCheckout, user, onUserCreditUpdate
       <ul className='items'>
         {cartItems.map((item) => (
           <li key={item.id}>
-            {item.name} - ${item.price} x {item.quantity} <button className={'x'} onClick={() => handleRemoveItem(item.id)}>X</button>
+            {item.name} - ${item.price} x {item.quantity}
+            <button className='remove-item-btn' onClick={() => handleRemoveItem(item.id)}>Remove</button>
           </li>
         ))}
       </ul>
