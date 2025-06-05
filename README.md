@@ -132,14 +132,13 @@ Shop uses the {__test_framework__} test framework. Run the test suite with:
 ```sh
 npm test
 ```
-
 ---
+
 ## License
 
-Shop is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+This project is licensed under the [MIT License](./LICENSE).
 
 ---
-
 ## Acknowledgments
 - Credit 
 
