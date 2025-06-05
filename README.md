@@ -137,6 +137,7 @@ npm test
 ## License
 
 Shop is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+
 ---
 
 ## Acknowledgments
