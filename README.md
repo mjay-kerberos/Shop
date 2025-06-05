@@ -8,9 +8,6 @@
 <em>A 'Star Wars' inspired Vite + React Shop for Gray Team Competition</em>
 
 <!-- BADGES -->
-<a href="https://github.com/mjay-kerberos/Shop/blob/main/LICENSE">
-  <img src="https://img.shields.io/github/license/mjay-kerberos/Shop?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-</a>
 <img src="https://img.shields.io/github/last-commit/mjay-kerberos/Shop?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 <img src="https://img.shields.io/github/languages/top/mjay-kerberos/Shop?style=flat&color=0080ff" alt="repo-top-language">
 <img src="https://img.shields.io/github/languages/count/mjay-kerberos/Shop?style=flat&color=0080ff" alt="repo-language-count">
