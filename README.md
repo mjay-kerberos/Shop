@@ -5,7 +5,7 @@
 
 # SHOP
 
-<em>Empowering teams to excel in competitive collaboration.</em>
+<em>A 'Star Wars' inspired Vite + React Shop for Gray Team Competition</em>
 
 <!-- BADGES -->
 <img src="https://img.shields.io/github/license/mjay-kerberos/Shop?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
