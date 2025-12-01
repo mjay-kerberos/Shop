@@ -74,7 +74,7 @@
 - name: Execute SQL initialization script
   become: true
   become_user: postgres
-  shell: psql -U "{{ postgres_user }}" -d "{{ postgres_db }}" -f /tmp/init_db.sql
+  shell: psql -d "{{ db_name }}" -f /tmp/init_db.sql
   args:
     executable: /bin/bash
 

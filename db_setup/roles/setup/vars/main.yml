@@ -1,7 +1,4 @@
-db_user: "shop_admin"
-db_name: "shop_db"
-db_password: "secure_password"
-
+# roles/setup/vars/main.yml
 teams:
   - name: "blue_team_1"
   - name: "blue_team_2"
