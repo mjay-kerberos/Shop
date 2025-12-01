@@ -82,6 +82,55 @@ This project enhances teamwork and streamlines e-commerce operations. The core f
 
 ---
 
+## Database & Automation (`db_setup`)
+
+This project includes an automated PostgreSQL setup using Ansible in the [`db_setup/`](./db_setup) directory.
+
+### What `db_setup` does
+
+The Ansible playbook:
+
+- Installs required system dependencies (e.g., `bash`, `openssl`, `libssl-dev`) on Debian-based systems.
+- Installs PostgreSQL and tools:
+  - `postgresql`
+  - `postgresql-contrib`
+  - `libpq-dev`
+  - `python3-psycopg2`
+- Ensures the PostgreSQL service is **running** and **enabled** at boot.
+- Creates the application database using variables (e.g., `db_name`, `db_user`, `db_password`).
+- Grants the application user the appropriate privileges on that database.
+- Copies the SQL initialization script `init_db.sql` to the target host and runs it as the `postgres` user.
+
+### Database schema
+
+The `init_db.sql` script creates and seeds the core tables used by the Shop application:
+
+- **`products`**
+  - Stores available items in the Gray Team shop.
+  - Columns: `id`, `name`, `price`, `image`, `description`.
+  - Preloaded with Star Wars–themed products such as _Fire Cannons!_, _Repair Droids_, _Mind Probe_, _Force Barrier_, and _A Darth Wager_.
+
+- **`users`**
+  - Stores team login credentials.
+  - Columns: `username`, `password`.
+  - Seeded users: `blue_team_1`, `blue_team_2`, `red_team`, `gray_team`.
+
+- **`purchases`**
+  - Tracks what each team buys and when.
+  - Columns: `purchase_id`, `user_id`, `product_id`, `quantity`, `purchase_date`.
+
+- **`inventory`**
+  - Enforces limited stock per product (e.g., `quantity <= 10`).
+  - Columns: `product_id`, `quantity`.
+
+- **`team_credits`**
+  - Manages starting and current credits for each team.
+  - Columns: `username`, `starting_credit`, `current_credit`.
+
+Together, the Ansible role and SQL initialization script allow you to spin up a fully seeded PostgreSQL database for the Shop application in a repeatable, competition-ready way.
+
+---
+
 ## Getting Started
 
 ### Prerequisites
