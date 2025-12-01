@@ -1,0 +1,31 @@
+db_user: "shop_admin"
+db_name: "shop_db"
+db_password: "secure_password"
+
+teams:
+  - name: "blue_team_1"
+  - name: "blue_team_2"
+  - name: "red_team"
+  - name: "gray_team"
+
+products:
+  - name: "Fire Cannons!"
+    price: 600
+    image: "cannon.webp"
+    description: "The opposing blue team boxes will be inhibited for 10 minutes depending on their operating system: Windows: will lose GUI access; Linux: Will have a non-interactive shell."
+  - name: "Repair Droids"
+    price: 400
+    image: "driod.webp"
+    description: "Red team must fix a service of your choosing and tell you what they did. The service may not be taken down for 5 minutes."
+  - name: "Mind Probe"
+    price: 150
+    image: "mind.webp"
+    description: "Get a hint on how to fix your service."
+  - name: "Force Barrier"
+    price: 100
+    image: "force.webp"
+    description: "Grants the ability to use firewall rules for 8 minutes. Only usable once per competition day."
+  - name: "A Darth Wager"
+    price: 50
+    image: "darth.webp"
+    description: "Play best of one rock paper scissors with a member of the gray team. If you win, you get 100 points. If you lose, you get nothing."

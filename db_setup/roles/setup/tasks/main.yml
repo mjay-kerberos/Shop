@@ -1,0 +1,81 @@
+---
+- name: Install dependencies for PostgreSQL
+  apt:
+    name: "{{ item }}"
+    update_cache: true
+    state: latest
+  loop:
+    - bash
+    - openssl
+    - libssl-dev
+    - libssl-doc
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install PostgreSQL and its dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: true
+    state: present
+  loop:
+    - postgresql
+    - postgresql-contrib
+    - libpq-dev
+    - python3-psycopg2
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Ensure the PostgreSQL service is running
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
+
+- name: Create the database specified in vars
+  become_user: postgres
+  postgresql_db:
+    name: "{{ db_name }}"
+    encoding: 'UTF8'
+    lc_collate: 'en_US.UTF-8'
+    lc_ctype: 'en_US.UTF-8'
+    template: 'template0'
+    state: present
+
+- name: Ensure user has access to the new database
+  become_user: postgres 
+  postgresql_user:
+    db: "{{ db_name }}"
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "ALL"
+    state: present
+
+- name: Ensure user does not have unnecessary permissions
+  become_user: postgres
+  postgresql_privs:
+    db: "{{ db_name }}"
+    role: "{{ db_user }}"
+    objs: ALL_IN_SCHEMA
+    privs: ALL
+    type: table
+
+- name: Copy SQL initialization script to the target host
+  copy:
+    src: init_db.sql
+    dest: "/tmp/init_db.sql"
+  become: true  
+
+- name: change permissions of script
+  file:
+    path: "/tmp/init_db.sql"
+    state: file
+    owner: postgres
+    group: postgres
+    mode: "0775"
+
+- name: Execute SQL initialization script
+  become: true
+  become_user: postgres
+  shell: psql -U "{{ postgres_user }}" -d "{{ postgres_db }}" -f /tmp/init_db.sql
+  args:
+    executable: /bin/bash
+
+

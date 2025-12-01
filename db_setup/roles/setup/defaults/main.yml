@@ -1,0 +1,7 @@
+# defaults/main.yml
+postgresql_version: "14"
+postgresql_user: "shop_admin"
+postgresql_password: "password"
+postgresql_db: "shop_db"
+postgresql_encoding: "UTF-8"
+postgresql_locale: "en_US.UTF-8"

@@ -1,0 +1,12 @@
+# handlers/main.yml
+- name: restart postgresql
+  service:
+    name: postgresql
+    state: restarted
+  become: yes
+
+- name: reload postgresql
+  service:
+    name: postgresql
+    state: reloaded
+  become: yes
