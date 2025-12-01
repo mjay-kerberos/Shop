@@ -37,14 +37,14 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [Features](#features)
+- [Database & Automation](#database--automation)
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Usage](#usage)
-    - [Testing](#testing)
-- [Features](#features)
+    - [Testing](#testing) 
 - [License](#license)
-- [Acknowledgment](#acknowledgment)
 
 ---
 
@@ -188,9 +188,5 @@ npm test
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
-
----
-## Acknowledgments
-- Credit 
 
 ---
